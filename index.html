@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <title>محاسبه درآمد و هزینه شخصی</title>
+</head>
+<body>
+    <div id="body-modal-back"></div>
+    <header></header>
+    <div id="mod" class="modal">
+        <div class="links">
+        </div>
+        <div class="desc">
+        </div>
+        <div class="buttons">
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="finance-form">
+            <div class="form-group-wrapper">
+                <div class="form-radio-wrapper">
+                    <input checked required id="income" name="finOption" type="radio" value="income" fa-name="درآمد">
+                    <label for="income">درآمد</label>
+                </div>
+                <div class="form-radio-wrapper">
+                    <input id="cost" name="finOption" type="radio" value="cost" fa-name="هزینه">
+                    <label for="cost">هزینه</label>
+                </div>
+            </div>
+            <div class="form-group-wrapper">
+                <div class="form-input-wrapper">
+                    <label for="">مبلغ :</label>
+                    <input required id="price-number" type="text">
+                    <span id ='price-text' class="price-text"> تومان</span>
+                </div>
+            </div>
+            <div class="form-group-wrapper">
+                <div class="form-input-wrapper form-input-date">
+                    <label for="">تاریخ :</label>
+                    <input required id="date-day" placeholder="روز" type="text">
+                    <input required id="date-month" placeholder="ماه" type="text">
+                    <input required id="date-year" placeholder="سال" type="text">
+                </div>
+            </div>
+            <div class="form-group-wrapper">
+                <div class="form-input-wrapper">
+                    <label for="">توضیحات :</label>
+                    <textarea required  name="" id="description" cols="30" rows="5"></textarea>
+                </div>
+            </div>
+            <button id="submit-fin-data">ثبت دخل و خرج</button>
+        </div>
+
+        <div class="chart-wrapper">
+            <div class="scoreboard">
+                <span class="income">
+                    <span>درآمد</span>
+                    <span id="income-area" class="income-color"></span>
+                </span>
+                <span class="cost">
+                    <span>هزینه</span>
+                    <span id="cost-area" class="cost-color"></span>
+                </span>
+            </div>
+            <div id="chart" class="chart">
+                <div class="chart-setting">
+                    <select name="" id="chart-year">
+                        <option value="0">جستجو بر اساس سال</option>
+                    </select>
+                </div>
+                <canvas id="myChart" height="250"></canvas>
+            </div>
+        </div>
+
+        <div class="stat-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ردیف</th>
+                        <th>مبلغ</th>
+                        <th>تاریخ</th>
+                        <th>نوع هزینه</th>
+                        <th>توضیحات</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl">
+                    <tr>
+                        <td>۱</td>
+                        <td>۲۳۰ . ۰۰۰ تومان</td>
+                        <td>۱۳۹۹/۰۵/۲۵</td>
+                        <td>درامد</td>
+                        <td>
+                            <button class="show-btn">نمایش</button>
+                            <button class="delete-btn">حذف</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="./dist/js/wordifyfa.min.js"></script>
+      <script type="module" defer src="./dist/js/main.js"></script>
+      
+</body>
+</html>
